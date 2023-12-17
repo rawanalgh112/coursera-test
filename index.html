@@ -7,6 +7,48 @@
   <body>
     <h1> Hello Corsera Students !</h1>
 
-    <h2> Rawan .. </h2>
+
+    <div id="nameCalculator">
+      <div>
+your name: <input type="text" id="name">
+      </div>
+
+      <div id="output">  </div>
+    </div>
   </body>
+
+<script type="text/javascript">
+  var student = {
+name : "",
+type: "student"
+  };
+
+  document.addEventListener('DOMContentLoaded', contentLoaded);
+
+function contentLoaded(event) {
+  document.getElementById('name').addEventListener("keyup" , keyUp);
+}
+
+function keyUp(event) {
+
+  calculateNumericOutput();
+}
+
+function calculateNumericOutput(){
+
+  student.name = document.getElementById('name').value;
+
+var totalNameValue = 0 ;
+for (var i = 0 ; i < student.name.length ; i ++){
+totalNameValue += student.name.charCodeAt(i);
+
+}
+
+var output = "Total numeric value of person's name is "+ totalNameValue;
+document.getElementById('output').innerText = output ;
+
+}
+
+</script>
+
 </html>
